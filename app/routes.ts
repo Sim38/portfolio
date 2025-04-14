@@ -7,8 +7,9 @@ import {
 
 export default [
   //   index("routes/home.tsx"),
-  ...prefix("/portfolio", [
-    route("/", "routes/home.tsx"),
-    route("/about", "routes/about.tsx"),
+  route("/portfolio", "components/main_layout.tsx", [
+    route("", "routes/home.tsx"),
+    route("about", "routes/about.tsx"),
+    route("projects", "routes/projects.tsx"),
   ]),
 ] satisfies RouteConfig;
