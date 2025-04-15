@@ -11,7 +11,7 @@ interface TabItem {
 
 export default function MainHeader() {
   return (
-    <nav className="flex flex-row w-full bg-white sticky top-0">
+    <nav className="flex flex-row w-full bg-primary-light sticky top-0">
       <NavTabsContainer />
     </nav>
   );
@@ -29,7 +29,7 @@ const NavTabsContainer = () => {
 
 const NavTab = ({ tab }: { tab: TabItem }) => {
   return (
-    <a href={tab.link} className="py-4 px-6 hover:bg-gray-100">
+    <a href={tab.link} className="py-4 px-6 hover:bg-tertiary-2">
       {tab.name}
     </a>
   );
