@@ -67,7 +67,7 @@ const TagSection = ({ tags }: { tags: Array<string> }) => {
   return (
     <div className="flex flex-row gap-2">
       {tags.map((tag) => (
-        <TagContainer tag={tag} />
+        <TagContainer key={tag} tag={tag} />
       ))}
     </div>
   );
