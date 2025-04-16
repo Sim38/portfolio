@@ -1,5 +1,7 @@
+import { useLocation } from "react-router";
+
 const tabItems = [
-  { name: "Home", link: "/" },
+  { name: "Home", link: "/portfolio/" },
   { name: "Projects", link: "/portfolio/projects" },
   { name: "About", link: "/portfolio/about" },
 ];
@@ -18,18 +20,24 @@ export default function MainHeader() {
 }
 
 const NavTabsContainer = () => {
+  const location = useLocation();
   return (
     <div className="flex flex-row w-full justify-center">
       {tabItems.map((tab) => (
-        <NavTab key={tab.name} tab={tab} />
+        <NavTab key={tab.name} tab={tab} activePath={location.pathname} />
       ))}
     </div>
   );
 };
 
-const NavTab = ({ tab }: { tab: TabItem }) => {
+const NavTab = ({ tab, activePath }: { tab: TabItem; activePath: string }) => {
   return (
-    <a href={tab.link} className="py-4 px-6 hover:bg-accent-2">
+    <a
+      href={tab.link}
+      className={`py-4 px-6 hover:bg-accent-2 ${
+        activePath === tab.link ? "bg-primary" : ""
+      }`}
+    >
       {tab.name}
     </a>
   );
