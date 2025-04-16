@@ -3,6 +3,7 @@ import SocialContainer from "~/components/social_container";
 import LinkedinIcon from "public/assets/LinkedIn_icon.svg";
 import TagBlock from "~/components/tag_block";
 import { Fragment } from "react/jsx-runtime";
+import CaretOvertype from "~/components/caret_overtype";
 
 const socials = [
   {
@@ -72,14 +73,13 @@ const AboutSection = () => {
           really is just a fancy way of saying "I enjoy spending more time
           over-engineering a solution than doing the task manually".
         </div>
-
         <div className="mt-6">
           Which has admitedly costed me hundreds if not thousands of hours that
           I'm never gonna get back — not that I would want to anwyays. Cause it
           is in those "wasted" hours that has allowed to to step out of my
           comfort zone and tried so much more new stuff I wouldn't have
           otherwise, and in fact this is how I got into programming in the first
-          place.
+          place. <CaretOvertype className="ml-1" />
         </div>
       </TagBlock>
     </div>
