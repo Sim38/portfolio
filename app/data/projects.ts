@@ -3,7 +3,7 @@ import subathonTimer from "public/assets/projects/subgoal.png";
 import electron from "public/assets/projects/electron-icon.svg";
 import electronApp from "public/assets/projects/electron-app.png";
 import myBusz from "public/assets/projects/mybusz.png";
-import birdFlappy from "public/assets/projects/bird-flappy.png";
+import birdFlappy from "public/assets/projects/birdflappy.png";
 
 export const projects: Array<Project> = [
   {
@@ -21,7 +21,7 @@ export const projects: Array<Project> = [
     imageSrc: [streamElement],
   },
   {
-    name: "MyBusz",
+    name: "myBusz",
     description:
       "Mobile Bus Application to check Bus Schedules, Location and Estimated Arrival Time in Malaysia.",
     tags: ["React Native", "Laravel", "SQL"],
