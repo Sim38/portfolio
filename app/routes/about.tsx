@@ -13,6 +13,10 @@ const socials = [
     name: "GitHub",
     link: "https://github.com/Sim38",
   },
+  {
+    name: "Email",
+    link: "mailto:simjunhong38@gmail.com",
+  },
 ];
 
 export default function About() {
