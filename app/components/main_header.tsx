@@ -21,7 +21,7 @@ const NavTabsContainer = () => {
   return (
     <div className="flex flex-row w-full justify-center">
       {tabItems.map((tab) => (
-        <NavTab tab={tab} />
+        <NavTab key={tab.name} tab={tab} />
       ))}
     </div>
   );
