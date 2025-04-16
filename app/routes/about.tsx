@@ -43,7 +43,7 @@ const SocialsSection = () => {
     <div className="flex flex-row my-1">
       {socials.map((social, index) => {
         return (
-          <>
+          <div key={index}>
             <a
               href={social.link}
               className="hover:text-accent-1 hover:underline"
@@ -51,7 +51,7 @@ const SocialsSection = () => {
               {social.name}
             </a>
             {index < socials.length - 1 && <p className="mx-2">•</p>}
-          </>
+          </div>
         );
       })}
     </div>
