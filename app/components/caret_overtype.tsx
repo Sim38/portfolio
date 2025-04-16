@@ -11,7 +11,11 @@ export default function CaretOvertype({ className }: { className?: string }) {
     return () => clearInterval(caretInterval);
   }, []);
 
-  return isCaretVisible ? (
-    <span className={`border-x-5 border-accent-2 ${className}`}></span>
-  ) : null;
+  return (
+    <span
+      className={`border-x-5 ${
+        isCaretVisible ? "border-accent-2" : "border-transparent"
+      } ${className}`}
+    ></span>
+  );
 }
