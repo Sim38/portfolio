@@ -12,6 +12,6 @@ export default function CaretOvertype({ className }: { className?: string }) {
   }, []);
 
   return isCaretVisible ? (
-    <span className={`border-x-5 border-[#aeafad] ${className}`}></span>
+    <span className={`border-x-5 border-accent-2 ${className}`}></span>
   ) : null;
 }
