@@ -20,7 +20,8 @@
 html,
 body {
   /* @apply bg-white dark:bg-gray-950; */
-  @apply bg-white dark:bg-primary text-light;
+  /* @apply bg-white dark:bg-primary text-light; */
+  @apply bg-primary text-white;  /* Force Dark Mode */
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
