@@ -26,10 +26,10 @@ export default function About() {
 
 const UserSection = () => {
   return (
-    <div className="flex flex-row gap-8">
+    <div className="flex flex-col items-center text-center sm:text-start sm:flex-row sm:gap-8 gap-4">
       <CircleIcon className="h-50 w-50" />
       <div className="flex flex-col justify-center">
-        <span className="font-bold text-5xl">Sim Jun Hong</span>
+        <span className="font-bold text-4xl sm:text-5xl">Sim Jun Hong</span>
         <p className="max-w-sm text-accent-2">
           Software Developer / Fullstack Developer
         </p>
@@ -41,7 +41,7 @@ const UserSection = () => {
 
 const SocialsSection = () => {
   return (
-    <div className="flex flex-row my-1">
+    <div className="flex flex-row my-1 justify-center sm:justify-start">
       {socials.map((social, index) => {
         return (
           <Fragment key={social.name}>
@@ -61,7 +61,7 @@ const SocialsSection = () => {
 
 const AboutSection = () => {
   return (
-    <div className="w-2xl my-16 text-xl">
+    <div className="sm:w-2xl sm:my-16 my-6 text-xl">
       <TagBlock tagName="about">
         <div>
           I'm a developer passionate about solving problems through code — which
