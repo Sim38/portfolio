@@ -29,7 +29,7 @@ const NavTabsContainer = () => {
 
 const NavTab = ({ tab }: { tab: TabItem }) => {
   return (
-    <a href={tab.link} className="py-4 px-6 hover:bg-tertiary-2">
+    <a href={tab.link} className="py-4 px-6 hover:bg-accent-2">
       {tab.name}
     </a>
   );
