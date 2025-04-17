@@ -1,17 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import CaretOvertype from "./caret_overtype";
-
-const tabItems = [
-  { name: "HOME", link: "/portfolio/" },
-  { name: "PROJECTS", link: "/portfolio/projects" },
-  { name: "ABOUT", link: "/portfolio/about" },
-];
-
-interface TabItem {
-  name: string;
-  link: string;
-}
+import { tabItems } from "../data/tabs";
 
 export default function MainSideBar({ className }: { className: string }) {
   const location = useLocation();
