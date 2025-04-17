@@ -1,8 +1,25 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Glitch";
+  src: url("/public/fonts/SDGlitch/SDGlitch_Demo.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Teko";
+  src: url("/public/fonts/Teko/static/Teko-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-glitch: "Glitch";
+  --font-unglitch: "Teko";
 
   --color-primary: #222629;
   --color-primary-light: #474B4F;
