@@ -1,38 +1,39 @@
-import projectCode from "../../routes/projects.tsx?raw";
-import aboutCode from "../../routes/about.tsx?raw";
+const codeFiles = import.meta.glob("../../routes/**/*.tsx", {
+  query: "raw",
+  import: "default",
+  eager: true,
+});
+import { useLocation } from "react-router";
+
+const codeMap: Record<string, string> = {};
+for (const path in codeFiles) {
+  const fileName = path.split("/").pop()?.replace(".tsx", "");
+  if (fileName) {
+    codeMap[fileName] = codeFiles[path] as string;
+  }
+}
 
 export default function AnimatedLayer() {
-  parseCodeArrayToString([projectCode, aboutCode]);
+  const location = useLocation();
+  const path = location.pathname.split("/")[2] || "home"; // Get Current Path
+  const selectedCode = codeMap[path] || ""; // Get the Code for the current Path loaded by import.meta.glob
 
   return (
     <div className="absolute inset-0 h-screen w-screen overflow-hidden animated-background">
       <div className="code-scroll-wrapper">
         <div className="code-block opacity-5 text-sm leading-relaxed">
-          {projectCode} {aboutCode}
-          {projectCode} {aboutCode}
-          {projectCode} {aboutCode}
+          {selectedCode} {selectedCode}
+          {selectedCode} {selectedCode}
+          {selectedCode} {selectedCode}
+          {selectedCode} {selectedCode}
         </div>
         <div className="code-block opacity-5 text-sm leading-relaxed">
-          {projectCode} {aboutCode}
-          {projectCode} {aboutCode}
-          {projectCode} {aboutCode}
+          {selectedCode} {selectedCode}
+          {selectedCode} {selectedCode}
+          {selectedCode} {selectedCode}
+          {selectedCode} {selectedCode}
         </div>
       </div>
     </div>
   );
 }
-
-const parseCodeArrayToString = (codeArray: Array<string>) => {
-  for (let codeChunk of codeArray) {
-    parseCodeToString(codeChunk);
-  }
-};
-
-const parseCodeToString = (codeChunk: string) => {
-  console.log(codeChunk);
-  let lineArray = codeChunk.split("\n");
-
-  for (let line of lineArray) {
-    console.log("a", line);
-  }
-};
