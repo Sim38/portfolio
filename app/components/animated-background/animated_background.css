@@ -1,0 +1,19 @@
+.animated-background {
+    background-color: #222629;
+    z-index: -100
+}
+
+.code-scroll-wrapper{
+    animation: scroll-down 60s linear infinite;
+    /* transform: translateY(-50%); */
+}
+
+@keyframes scroll-down{
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}

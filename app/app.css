@@ -1,17 +1,18 @@
 @import "tailwindcss";
+@import "./components/animated-background/animated_background.css";
 
 @font-face {
   font-family: "Glitch";
-  src: url("/public/fonts/SDGlitch/SDGlitch_Demo.ttf") format("truetype");
+  src: url("/fonts/SDGlitch/SDGlitch_Demo.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Teko";
-  src: url("/public/fonts/Teko/static/Teko-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  src: url("/fonts/Teko/static/Teko-Regular.ttf") format("truetype");
+
+font-style: normal;
 }
 
 
@@ -38,7 +39,8 @@ html,
 body {
   /* @apply bg-white dark:bg-gray-950; */
   /* @apply bg-white dark:bg-primary text-light; */
-  @apply bg-primary text-white;  /* Force Dark Mode */
+  /* @apply bg-primary text-white;  Force Dark Mode */
+  @apply text-white;  /* Removed primary bg for Animated BG */
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
