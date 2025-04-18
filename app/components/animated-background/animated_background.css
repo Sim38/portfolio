@@ -4,7 +4,7 @@
 }
 
 .code-scroll-wrapper{
-    animation: scroll-down 60s linear infinite;
+    animation: scroll-down 100s linear infinite;
     /* transform: translateY(-50%); */
 }
 
