@@ -31,14 +31,16 @@ export default function About() {\r
 \r
 const UserSection = () => {\r
   return (\r
-    <div className="flex flex-col items-center text-center sm:text-start sm:flex-row sm:gap-8 gap-4">\r
-      <CircleIcon className="h-50 w-50" />\r
-      <div className="flex flex-col justify-center">\r
-        <span className="font-bold text-4xl sm:text-5xl">Sim Jun Hong</span>\r
-        <p className="max-w-sm text-accent-2">\r
-          Software Developer / Fullstack Developer\r
-        </p>\r
-        <SocialsSection />\r
+    <div className="container @container">\r
+      <div className="flex flex-col items-center justify-center text-center @md:text-start @md:flex-row @md:gap-8 gap-4">\r
+        <CircleIcon className="h-50 w-50" />\r
+        <div className="flex flex-col justify-center">\r
+          <span className="font-bold text-4xl sm:text-5xl">Sim Jun Hong</span>\r
+          <p className="max-w-sm text-accent-2">\r
+            Software Developer / Fullstack Developer\r
+          </p>\r
+          <SocialsSection />\r
+        </div>\r
       </div>\r
     </div>\r
   );\r
@@ -66,7 +68,7 @@ const SocialsSection = () => {\r
 \r
 const AboutSection = () => {\r
   return (\r
-    <div className="sm:w-2xl sm:my-16 my-6 text-xl">\r
+    <div className="sm:max-w-2xl sm:my-16 my-6 text-xl">\r
       <TagBlock tagName="about">\r
         <div>\r
           I'm a developer passionate about solving problems through code — which\r
@@ -98,14 +100,16 @@ import TagBlock from "~/components/tag_block";
 export default function Home() {
   return (
     <div className="flex flex-col w-full h-full items-center justify-center">
-      <div className="flex flex-row items-center">
-        <img
-          src={portfolioIcon}
-          className="object-cover w-32 h-auto aspect-square overflow-hidden rounded-[1rem] border-1 border-secondary"
-        />
-        <p className="font-unglitch text-7xl ml-6">Welcome</p>
+      <div className="container @container">
+        <div className="flex items-center justify-center @md:flex-row flex-col">
+          <img
+            src={portfolioIcon}
+            className="object-cover w-32 h-auto aspect-square overflow-hidden rounded-[1rem] border-1 border-secondary"
+          />
+          <p className="font-unglitch text-7xl ml-6 mt-6 @md:mt-0">Welcome</p>
+        </div>
       </div>
-      <TagBlock tagName="welcome" className="w-xl text-xl mt-10">
+      <TagBlock tagName="welcome" className="max-w-xl text-xl mt-10">
         <p>
           Welcome to my portfolio, this is just a little site to showcase my
           past{" "}
@@ -158,7 +162,7 @@ const ProjectContainer = ({ project }: { project: Project }) => {\r
   return (\r
     <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-50 sm:gap-4 ">\r
       <ProjectImage imageSrc={project.imageSrc} />\r
-      <div className="flex flex-col gap-2 sm:w-xl ">\r
+      <div className="flex flex-col gap-2 md:max-w-xl ">\r
         <h2 className="text-2xl">{project.name}</h2>\r
         <p className="flex-1 overflow-hidden text-ellipsis line-clamp-4">\r
           {project.description}\r
@@ -215,10 +219,10 @@ const TagContainer = ({\r
 }) => {\r
   return (\r
     <div\r
-      className={\`rounded-full py-0.5 px-2 text-sm bg-neutral-light text-neutral-dark \${className}\`}\r
+      className={\`rounded-full py-0.5 px-2 text-sm bg-neutral-light text-neutral-dark text-ellipsis line-clamp-1 \${className}\`}\r
     >\r
       {tag}\r
     </div>\r
   );\r
 };\r
-`,b=[{regex:/^\s*(export|import|const|default|from|function|for|if)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#569cd6]",children:e[0]},r)},{regex:/^\s*(className)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#9cdcf0]",children:e[0]},r)},{regex:/^\s*=\s*/,render:(e,r)=>t.jsx("span",{className:"text-gray-300",children:e[0]},r)},{regex:/^\s*({|}|\[|\])\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#ffd710]",children:e[0]},r)},{regex:/^\s*(\(|\))\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#da70b2]",children:e[0]},r)},{regex:/^\s*(<|>|<\/|\/>)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#808080]",children:e[0]},r)},{regex:/^\s*(".*"|`.*`)/,render:(e,r)=>t.jsx("span",{className:"text-[#ce9078]",children:e[0]},r)},{regex:new RegExp("^\\/*\\w+(?=.*?(?<!=)>)"),render:(e,r)=>t.jsx("span",{className:"text-[#569cd6]",children:e[0]},r)},{regex:/^\s*(\S+)\s*/,render:(e,r)=>t.jsx("span",{className:"text-gray-300",children:e[0]},r)}],m=Object.assign({"../../routes/about.tsx":y,"../../routes/home.tsx":w,"../../routes/projects.tsx":k}),u={};var d;for(const e in m){const r=(d=e.split("/").pop())==null?void 0:d.replace(".tsx","");r&&(u[r]=m[e])}function S(){const r=p().pathname.split("/")[2]||"home",n=u[r]||"",s=c.useMemo(()=>t.jsx(I,{code:n}),[n]);return t.jsx("div",{className:"absolute inset-0 h-screen w-screen overflow-hidden animated-background",children:t.jsx("div",{className:"code-scroll-wrapper opacity-10",children:Array.from({length:16}).map((a,o)=>t.jsx(c.Fragment,{children:s},o))})})}const I=({code:e,className:r})=>{const n=[];let s=e,a=0;for(;s.length>0;){let o=!1;for(const i of b){const l=i.regex.exec(s);if(l){a++;const f=i.render(l,a.toString());n.push(f),s=s.slice(l[0].length),o=!0;break}}if(!o){n.push(t.jsx("span",{className:"text-red-500",children:s})),s="";break}}return t.jsx("span",{children:n})};function _({className:e}){const[r,n]=c.useState(!1);return t.jsxs("nav",{className:`${e}`,children:[t.jsx("div",{className:"flex w-full bg-secondary justify-end px-5 py-2.5",children:t.jsx("button",{className:"text-3xl",onClick:()=>{n(s=>!s)},children:"☰"})}),r?t.jsx(C,{tabItems:x}):null]})}const C=({tabItems:e})=>t.jsx("div",{className:"flex flex-col bg-primary py-2.5",children:e.map(r=>t.jsx("a",{href:r.link,className:"px-5 py-2.5",children:r.name},r.name))}),O=g(function(){return t.jsxs("div",{className:"flex flex-col sm:flex-row h-screen",children:[t.jsx(S,{}),t.jsx(j,{className:"hidden sm:flex sm:flex-1/4"}),t.jsx(_,{className:"sm:hidden"}),t.jsx("main",{className:"sm:flex-3/4 sm:p-12 p-8 overflow-y-auto",children:t.jsx(h,{})})]})});export{O as default};
+`,b=[{regex:/^\s*(export|import|const|default|from|function|for|if)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#569cd6]",children:e[0]},r)},{regex:/^\s*(className)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#9cdcf0]",children:e[0]},r)},{regex:/^\s*=\s*/,render:(e,r)=>t.jsx("span",{className:"text-gray-300",children:e[0]},r)},{regex:/^\s*({|}|\[|\])\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#ffd710]",children:e[0]},r)},{regex:/^\s*(\(|\))\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#da70b2]",children:e[0]},r)},{regex:/^\s*(<|>|<\/|\/>)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#808080]",children:e[0]},r)},{regex:/^\s*(".*"|`.*`)/,render:(e,r)=>t.jsx("span",{className:"text-[#ce9078]",children:e[0]},r)},{regex:new RegExp("^\\/*\\w+(?=.*?(?<!=)>)"),render:(e,r)=>t.jsx("span",{className:"text-[#569cd6]",children:e[0]},r)},{regex:/^\s*(\S+)\s*/,render:(e,r)=>t.jsx("span",{className:"text-gray-300",children:e[0]},r)}],m=Object.assign({"../../routes/about.tsx":y,"../../routes/home.tsx":w,"../../routes/projects.tsx":k}),u={};var d;for(const e in m){const r=(d=e.split("/").pop())==null?void 0:d.replace(".tsx","");r&&(u[r]=m[e])}function S(){const r=p().pathname.split("/")[2]||"home",n=u[r]||"",s=c.useMemo(()=>t.jsx(I,{code:n}),[n]);return t.jsx("div",{className:"absolute inset-0 h-screen w-screen overflow-hidden animated-background",children:t.jsx("div",{className:"code-scroll-wrapper opacity-10",children:Array.from({length:16}).map((a,o)=>t.jsx(c.Fragment,{children:s},o))})})}const I=({code:e,className:r})=>{const n=[];let s=e,a=0;for(;s.length>0;){let o=!1;for(const i of b){const l=i.regex.exec(s);if(l){a++;const f=i.render(l,a.toString());n.push(f),s=s.slice(l[0].length),o=!0;break}}if(!o){n.push(t.jsx("span",{className:"text-red-500",children:s})),s="";break}}return t.jsx("span",{children:n})};function _({className:e}){const[r,n]=c.useState(!1);return t.jsxs("nav",{className:`${e}`,children:[t.jsx("div",{className:"flex w-full bg-secondary justify-end px-5 py-2.5",children:t.jsx("button",{className:"text-3xl",onClick:()=>{n(s=>!s)},children:"☰"})}),r?t.jsx(C,{tabItems:x}):null]})}const C=({tabItems:e})=>t.jsx("div",{className:"flex flex-col bg-primary py-2.5",children:e.map(r=>t.jsx("a",{href:r.link,className:"px-5 py-2.5",children:r.name},r.name))}),O=g(function(){return t.jsxs("div",{className:"flex flex-col md:flex-row h-screen",children:[t.jsx(S,{}),t.jsx(j,{className:"hidden md:flex md:flex-1/4"}),t.jsx(_,{className:"md:hidden"}),t.jsx("main",{className:"sm:flex-3/4 sm:p-12 p-8 overflow-y-auto",children:t.jsx(h,{})})]})});export{O as default};
