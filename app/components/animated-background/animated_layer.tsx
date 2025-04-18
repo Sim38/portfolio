@@ -68,5 +68,5 @@ const ParsedCodeBlock = ({
     }
   }
 
-  return <div>{elements}</div>;
+  return <span>{elements}</span>;
 };
