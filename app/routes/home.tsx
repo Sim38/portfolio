@@ -1,4 +1,5 @@
 import portfolioIcon from "public/assets/portfolio_icon.png";
+import CaretOvertype from "~/components/caret_overtype";
 import TagBlock from "~/components/tag_block";
 
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
         <p className="mt-6">
           If you're wondering, yes the code that is scrolling down in the
           background are the live code for the current page that you are on.
+          <CaretOvertype className="ml-1" />
         </p>
       </TagBlock>
     </div>
