@@ -3,7 +3,7 @@ const codeFiles = import.meta.glob("../../routes/**/*.tsx", {
   import: "default",
   eager: true,
 });
-import { useMemo, type ReactNode } from "react";
+import { Fragment, useMemo, type ReactNode } from "react";
 import { useLocation } from "react-router";
 import { codeParserRegexRules } from "../../data/code_parser_regex_rules";
 
@@ -28,7 +28,9 @@ export default function AnimatedLayer() {
   return (
     <div className="absolute inset-0 h-screen w-screen overflow-hidden animated-background">
       <div className="code-scroll-wrapper opacity-10">
-        {Array.from({ length: 16 }).map((_, i) => parsedCodeBlock)}
+        {Array.from({ length: 16 }).map((_, i) => (
+          <Fragment key={i}>{parsedCodeBlock}</Fragment>
+        ))}
       </div>
     </div>
   );
@@ -43,6 +45,7 @@ const ParsedCodeBlock = ({
 }) => {
   const elements: Array<ReactNode> = [];
   let remaining = code;
+  let index = 0;
 
   while (remaining.length > 0) {
     let matched = false;
@@ -50,10 +53,8 @@ const ParsedCodeBlock = ({
       const match = rule.regex.exec(remaining);
 
       if (match) {
-        console.log(
-          `Matched ${match[0]} with Rule: ${rule.regex}, "Length: ${match[0].length}`
-        );
-        const render = rule.render(match);
+        index++;
+        const render = rule.render(match, index.toString());
         elements.push(render);
         remaining = remaining.slice(match[0].length);
         matched = true;

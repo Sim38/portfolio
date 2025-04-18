@@ -1,4 +1,4 @@
 interface CodeParserRegexRule {
   regex: RegExp;
-  render: (match: RegExpExecArray) => React.ReactNode;
+  render: (match: RegExpExecArray, key: string) => React.ReactNode;
 }
