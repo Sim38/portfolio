@@ -82,6 +82,13 @@ const AboutSection = () => {
           place. <CaretOvertype className="ml-1" />
         </div>
       </TagBlock>
+
+      <TagBlock tagName="skills" className="mt-8">
+        <p className="underline">Languages</p>
+        <p>Typescript, Javascript, Python, Dart, Kotlin, C, C++, Java, SQL</p>
+        <p className="underline mt-6">Frameworks</p>
+        <p>React, Tailwind, Bootstrap, Express, Flutter, Django, Flask</p>
+      </TagBlock>
     </div>
   );
 };
