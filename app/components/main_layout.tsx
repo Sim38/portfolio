@@ -5,10 +5,10 @@ import MobiileNavbar from "./mobile_hamburger_nav";
 
 export default function MainLayout() {
   return (
-    <div className="flex flex-col sm:flex-row h-screen">
+    <div className="flex flex-col md:flex-row h-screen">
       <AnimatedBackground />
-      <MainSideBar className="hidden sm:flex sm:flex-1/4" />
-      <MobiileNavbar className="sm:hidden" />
+      <MainSideBar className="hidden md:flex md:flex-1/4" />
+      <MobiileNavbar className="md:hidden" />
       <main className="sm:flex-3/4 sm:p-12 p-8 overflow-y-auto">
         <Outlet />
       </main>

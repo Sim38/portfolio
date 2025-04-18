@@ -4,14 +4,16 @@ import TagBlock from "~/components/tag_block";
 export default function Home() {
   return (
     <div className="flex flex-col w-full h-full items-center justify-center">
-      <div className="flex flex-row items-center">
-        <img
-          src={portfolioIcon}
-          className="object-cover w-32 h-auto aspect-square overflow-hidden rounded-[1rem] border-1 border-secondary"
-        />
-        <p className="font-unglitch text-7xl ml-6">Welcome</p>
+      <div className="container @container">
+        <div className="flex items-center justify-center @md:flex-row flex-col">
+          <img
+            src={portfolioIcon}
+            className="object-cover w-32 h-auto aspect-square overflow-hidden rounded-[1rem] border-1 border-secondary"
+          />
+          <p className="font-unglitch text-7xl ml-6 mt-6 @md:mt-0">Welcome</p>
+        </div>
       </div>
-      <TagBlock tagName="welcome" className="w-xl text-xl mt-10">
+      <TagBlock tagName="welcome" className="max-w-xl text-xl mt-10">
         <p>
           Welcome to my portfolio, this is just a little site to showcase my
           past{" "}

@@ -25,7 +25,7 @@ const ProjectContainer = ({ project }: { project: Project }) => {
   return (
     <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-50 sm:gap-4 ">
       <ProjectImage imageSrc={project.imageSrc} />
-      <div className="flex flex-col gap-2 sm:w-xl ">
+      <div className="flex flex-col gap-2 md:max-w-xl ">
         <h2 className="text-2xl">{project.name}</h2>
         <p className="flex-1 overflow-hidden text-ellipsis line-clamp-4">
           {project.description}
@@ -82,7 +82,7 @@ const TagContainer = ({
 }) => {
   return (
     <div
-      className={`rounded-full py-0.5 px-2 text-sm bg-neutral-light text-neutral-dark ${className}`}
+      className={`rounded-full py-0.5 px-2 text-sm bg-neutral-light text-neutral-dark text-ellipsis line-clamp-1 ${className}`}
     >
       {tag}
     </div>
