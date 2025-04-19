@@ -28,9 +28,16 @@ export default function AnimatedLayer() {
   return (
     <div className="absolute inset-0 h-screen w-screen overflow-hidden animated-background">
       <div className="code-scroll-wrapper opacity-10">
-        {Array.from({ length: 16 }).map((_, i) => (
-          <Fragment key={i}>{parsedCodeBlock}</Fragment>
-        ))}
+        <div>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <Fragment key={i}>{parsedCodeBlock}</Fragment>
+          ))}
+        </div>
+        <div>
+          {Array.from({ length: 8 }).map((_, i) => (
+            <Fragment key={i}>{parsedCodeBlock}</Fragment>
+          ))}
+        </div>
       </div>
     </div>
   );
