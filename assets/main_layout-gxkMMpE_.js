@@ -1,4 +1,4 @@
-import{w as g}from"./with-props-DaI-xS-Y.js";import{p,l as t,r as c,O as h}from"./chunk-KNED5TY2-9AsnIfpK.js";import{C as v}from"./caret_overtype-BpuDa-YJ.js";const x=[{name:"HOME",link:"/portfolio/"},{name:"PROJECTS",link:"/portfolio/projects"},{name:"ABOUT",link:"/portfolio/about"}];function j({className:e}){const r=p();return t.jsx("nav",{className:`sticky top-0 h-screen flex flex-col justify-center pl-20 ${e}`,children:x.map(n=>t.jsx(N,{tabItem:n,className:"my-8",activePath:r.pathname},n.name))})}const N=({tabItem:e,className:r,activePath:n})=>{const[s,a]=c.useState(!1);return t.jsxs("div",{className:`flex items-center h-[5rem] ${r}`,children:[t.jsx("div",{className:"font-unglitch text-accent-1 text-[5.3rem] tracking-[0.15rem]",children:"~/"}),t.jsxs("a",{href:e.link,className:`group hover:font-glitch hover:text-accent-2 hover:text-[5rem] hover:pb-[0.8rem] ${n===e.link?"font-glitch text-accent-2 text-[5rem] pb-[0.8rem]":"font-unglitch text-accent-1 text-[5.3rem] tracking-[0.15rem]"}`,children:[e.name,t.jsx(v,{className:"ml-1 py-2 group-hover:opacity-100 opacity-0"})]})]})},y=`import CircleIcon from "~/components/cirlce_icon";\r
+import{w as g}from"./with-props-Cp-sCf77.js";import{p,l as e,r as c,O as h}from"./chunk-KNED5TY2-D1bKu3kb.js";import{C as v}from"./caret_overtype-CA4cfF2p.js";const x=[{name:"HOME",link:"/portfolio/"},{name:"PROJECTS",link:"/portfolio/projects"},{name:"ABOUT",link:"/portfolio/about"}];function j({className:r}){const t=p();return e.jsx("nav",{className:`sticky top-0 h-screen flex flex-col justify-center pl-20 ${r}`,children:x.map(n=>e.jsx(N,{tabItem:n,className:"my-8",activePath:t.pathname},n.name))})}const N=({tabItem:r,className:t,activePath:n})=>{const[s,o]=c.useState(!1);return e.jsxs("div",{className:`flex items-center h-[5rem] ${t}`,children:[e.jsx("div",{className:"font-unglitch text-accent-1 text-[5.3rem] tracking-[0.15rem]",children:"~/"}),e.jsxs("a",{href:r.link,className:`group hover:font-glitch hover:text-accent-2 hover:text-[5rem] hover:pb-[0.8rem] ${n===r.link?"font-glitch text-accent-2 text-[5rem] pb-[0.8rem]":"font-unglitch text-accent-1 text-[5.3rem] tracking-[0.15rem]"}`,children:[r.name,e.jsx(v,{className:"ml-1 py-2 group-hover:opacity-100 opacity-0"})]})]})},y=`import CircleIcon from "~/components/cirlce_icon";\r
 import SocialContainer from "~/components/social_container";\r
 import LinkedinIcon from "public/assets/LinkedIn_icon.svg";\r
 import TagBlock from "~/components/tag_block";\r
@@ -140,18 +140,28 @@ export default function Home() {
 `,k=`import { useEffect, useState } from "react";\r
 import { projects } from "../data/projects";\r
 import missingImage from "public/assets/missing_image.jpg";\r
+import VerticalCarousel from "~/components/vertical_carousel";\r
+import useMediaQuery from "../hooks/useMediaQuery";\r
 \r
 export default function Projects() {\r
   return (\r
     <div className="flex flex-col w-full h-full items-center">\r
-      <h1 className="text-4xl">Projects</h1>\r
+      <h1 className="text-7xl font-unglitch">Projects</h1>\r
       <ProjectSection />\r
     </div>\r
   );\r
 }\r
 \r
 const ProjectSection = () => {\r
-  return (\r
+  const isLargeScreen = useMediaQuery("(min-width: 1024px)");\r
+\r
+  return isLargeScreen ? (\r
+    <VerticalCarousel>\r
+      {projects.map((project) => (\r
+        <ProjectContainer key={project.name} project={project} />\r
+      ))}\r
+    </VerticalCarousel>\r
+  ) : (\r
     <div className="w-full sm:w-fit">\r
       {projects.map((project) => (\r
         <ProjectContainer key={project.name} project={project} />\r
@@ -162,7 +172,7 @@ const ProjectSection = () => {\r
 \r
 const ProjectContainer = ({ project }: { project: Project }) => {\r
   return (\r
-    <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-50 sm:gap-4 ">\r
+    <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-40 sm:gap-4 ">\r
       <ProjectImage imageSrc={project.imageSrc} />\r
       <div className="flex flex-col gap-2 md:max-w-xl ">\r
         <h2 className="text-2xl">{project.name}</h2>\r
@@ -227,4 +237,4 @@ const TagContainer = ({\r
     </div>\r
   );\r
 };\r
-`,b=[{regex:/^\s*(export|import|const|default|from|function|for|if)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#569cd6]",children:e[0]},r)},{regex:/^\s*(className)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#9cdcf0]",children:e[0]},r)},{regex:/^\s*=\s*/,render:(e,r)=>t.jsx("span",{className:"text-gray-300",children:e[0]},r)},{regex:/^\s*({|}|\[|\])\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#ffd710]",children:e[0]},r)},{regex:/^\s*(\(|\))\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#da70b2]",children:e[0]},r)},{regex:/^\s*(<|>|<\/|\/>)\s*/,render:(e,r)=>t.jsx("span",{className:"text-[#808080]",children:e[0]},r)},{regex:/^\s*(".*"|`.*`)/,render:(e,r)=>t.jsx("span",{className:"text-[#ce9078]",children:e[0]},r)},{regex:new RegExp("^\\/*\\w+(?=.*?(?<!=)>)"),render:(e,r)=>t.jsx("span",{className:"text-[#569cd6]",children:e[0]},r)},{regex:/^\s*(\S+)\s*/,render:(e,r)=>t.jsx("span",{className:"text-gray-300",children:e[0]},r)}],m=Object.assign({"../../routes/about.tsx":y,"../../routes/home.tsx":w,"../../routes/projects.tsx":k}),u={};var d;for(const e in m){const r=(d=e.split("/").pop())==null?void 0:d.replace(".tsx","");r&&(u[r]=m[e])}function S(){const r=p().pathname.split("/")[2]||"home",n=u[r]||"",s=c.useMemo(()=>t.jsx(C,{code:n}),[n]);return t.jsx("div",{className:"absolute inset-0 h-screen w-screen overflow-hidden animated-background",children:t.jsx("div",{className:"code-scroll-wrapper opacity-10",children:Array.from({length:16}).map((a,o)=>t.jsx(c.Fragment,{children:s},o))})})}const C=({code:e,className:r})=>{const n=[];let s=e,a=0;for(;s.length>0;){let o=!1;for(const i of b){const l=i.regex.exec(s);if(l){a++;const f=i.render(l,a.toString());n.push(f),s=s.slice(l[0].length),o=!0;break}}if(!o){n.push(t.jsx("span",{className:"text-red-500",children:s})),s="";break}}return t.jsx("span",{children:n})};function _({className:e}){const[r,n]=c.useState(!1);return t.jsxs("nav",{className:`${e}`,children:[t.jsx("div",{className:"flex w-full bg-secondary justify-end px-5 py-2.5",children:t.jsx("button",{className:"text-3xl",onClick:()=>{n(s=>!s)},children:"☰"})}),r?t.jsx(I,{tabItems:x}):null]})}const I=({tabItems:e})=>t.jsx("div",{className:"flex flex-col bg-primary py-2.5",children:e.map(r=>t.jsx("a",{href:r.link,className:"px-5 py-2.5",children:r.name},r.name))}),O=g(function(){return t.jsxs("div",{className:"flex flex-col md:flex-row h-screen",children:[t.jsx(S,{}),t.jsx(j,{className:"hidden md:flex md:flex-1/4"}),t.jsx(_,{className:"md:hidden"}),t.jsx("main",{className:"sm:flex-3/4 sm:p-12 p-8 overflow-y-auto",children:t.jsx(h,{})})]})});export{O as default};
+`,b=[{regex:/^\s*(export|import|const|default|from|function|for|if)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#569cd6]",children:r[0]},t)},{regex:/^\s*(className)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#9cdcf0]",children:r[0]},t)},{regex:/^\s*=\s*/,render:(r,t)=>e.jsx("span",{className:"text-gray-300",children:r[0]},t)},{regex:/^\s*({|}|\[|\])\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#ffd710]",children:r[0]},t)},{regex:/^\s*(\(|\))\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#da70b2]",children:r[0]},t)},{regex:/^\s*(<|>|<\/|\/>)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#808080]",children:r[0]},t)},{regex:/^\s*(".*"|`.*`)/,render:(r,t)=>e.jsx("span",{className:"text-[#ce9078]",children:r[0]},t)},{regex:new RegExp("^\\/*\\w+(?=.*?(?<!=)>)"),render:(r,t)=>e.jsx("span",{className:"text-[#569cd6]",children:r[0]},t)},{regex:/^\s*(\S+)\s*/,render:(r,t)=>e.jsx("span",{className:"text-gray-300",children:r[0]},t)}],m=Object.assign({"../../routes/about.tsx":y,"../../routes/home.tsx":w,"../../routes/projects.tsx":k}),u={};var d;for(const r in m){const t=(d=r.split("/").pop())==null?void 0:d.replace(".tsx","");t&&(u[t]=m[r])}function S(){const t=p().pathname.split("/")[2]||"home",n=u[t]||"",s=c.useMemo(()=>e.jsx(C,{code:n}),[n]);return e.jsx("div",{className:"absolute inset-0 h-screen w-screen overflow-hidden animated-background",children:e.jsxs("div",{className:"code-scroll-wrapper opacity-10",children:[e.jsx("div",{children:Array.from({length:8}).map((o,a)=>e.jsx(c.Fragment,{children:s},a))}),e.jsx("div",{children:Array.from({length:8}).map((o,a)=>e.jsx(c.Fragment,{children:s},a))})]})})}const C=({code:r,className:t})=>{const n=[];let s=r,o=0;for(;s.length>0;){let a=!1;for(const i of b){const l=i.regex.exec(s);if(l){o++;const f=i.render(l,o.toString());n.push(f),s=s.slice(l[0].length),a=!0;break}}if(!a){n.push(e.jsx("span",{className:"text-red-500",children:s})),s="";break}}return e.jsx("span",{children:n})};function _({className:r}){const[t,n]=c.useState(!1);return e.jsxs("nav",{className:`${r}`,children:[e.jsx("div",{className:"flex w-full bg-secondary justify-end px-5 py-2.5",children:e.jsx("button",{className:"text-3xl",onClick:()=>{n(s=>!s)},children:"☰"})}),t?e.jsx(I,{tabItems:x}):null]})}const I=({tabItems:r})=>e.jsx("div",{className:"flex flex-col bg-primary py-2.5",children:r.map(t=>e.jsx("a",{href:t.link,className:"px-5 py-2.5",children:t.name},t.name))}),O=g(function(){return e.jsxs("div",{className:"flex flex-col md:flex-row h-screen",children:[e.jsx(S,{}),e.jsx(j,{className:"hidden md:flex md:flex-1/4"}),e.jsx(_,{className:"md:hidden"}),e.jsx("main",{className:"sm:flex-3/4 sm:p-12 p-8 overflow-y-auto",children:e.jsx(h,{})})]})});export{O as default};
