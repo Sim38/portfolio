@@ -1,0 +1,31 @@
+.carousel-item {
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.5s ease
+}
+
+.carousel-item-top{
+    transform: translateY(calc(-100%)) translateX(calc(100%/4));
+    opacity: 0.4;
+}
+
+
+.carousel-item-middle {
+    transform: translateX(0);
+    opacity: 1;
+}  
+
+.carousel-item-bottom{
+    transform: translateY(calc(100%)) translateX(calc(100%/4));
+    opacity: 0.4;
+}
+
+.carousel-item-top-hidden {
+    transform: translateY(calc(-150%)) translateX(calc(100%/2));
+    opacity: 0;
+}  
+
+
+.carousel-item-bottom-hidden {
+    transform: translateY(calc(150%)) translateX(calc(100%/2));
+    opacity: 0;
+}  

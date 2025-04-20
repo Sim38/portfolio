@@ -1,18 +1,28 @@
 import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
 import missingImage from "public/assets/missing_image.jpg";
+import VerticalCarousel from "~/components/vertical_carousel";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function Projects() {
   return (
     <div className="flex flex-col w-full h-full items-center">
-      <h1 className="text-4xl">Projects</h1>
+      <h1 className="text-7xl font-unglitch">Projects</h1>
       <ProjectSection />
     </div>
   );
 }
 
 const ProjectSection = () => {
-  return (
+  const isLargeScreen = useMediaQuery("(min-width: 1024px)");
+
+  return isLargeScreen ? (
+    <VerticalCarousel>
+      {projects.map((project) => (
+        <ProjectContainer key={project.name} project={project} />
+      ))}
+    </VerticalCarousel>
+  ) : (
     <div className="w-full sm:w-fit">
       {projects.map((project) => (
         <ProjectContainer key={project.name} project={project} />
@@ -23,7 +33,7 @@ const ProjectSection = () => {
 
 const ProjectContainer = ({ project }: { project: Project }) => {
   return (
-    <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-50 sm:gap-4 ">
+    <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-40 sm:gap-4 ">
       <ProjectImage imageSrc={project.imageSrc} />
       <div className="flex flex-col gap-2 md:max-w-xl ">
         <h2 className="text-2xl">{project.name}</h2>
