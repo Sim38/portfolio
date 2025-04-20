@@ -1,9 +1,9 @@
-import streamElement from "public/assets/projects/stream-element.jpg";
-import subathonTimer from "public/assets/projects/subgoal.png";
-import electron from "public/assets/projects/electron-icon.svg";
-import electronApp from "public/assets/projects/electron-app.png";
-import myBusz from "public/assets/projects/mybusz.png";
-import birdFlappy from "public/assets/projects/birdflappy.png";
+import streamElement from "/assets/projects/stream-element.jpg";
+import subathonTimer from "/assets/projects/subgoal.png";
+import electron from "/assets/projects/electron-icon.svg";
+import electronApp from "/assets/projects/electron-app.png";
+import myBusz from "/assets/projects/mybusz.png";
+import birdFlappy from "/assets/projects/birdflappy.png";
 
 export const projects: Array<Project> = [
   {
