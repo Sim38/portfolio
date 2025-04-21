@@ -172,7 +172,7 @@ const ProjectSection = () => {\r
 \r
 const ProjectContainer = ({ project }: { project: Project }) => {\r
   return (\r
-    <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-40 sm:gap-4 ">\r
+    <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-50 sm:gap-4 ">\r
       <ProjectImage imageSrc={project.imageSrc} />\r
       <div className="flex flex-col gap-2 md:max-w-xl ">\r
         <h2 className="text-2xl">{project.name}</h2>\r
