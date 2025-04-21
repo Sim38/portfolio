@@ -22,7 +22,7 @@ export default function VerticalCarousel({
     } else if (index === activeIndex - 1) {
       return (
         <div
-          className="carousel-item carousel-item-top"
+          className="carousel-item carousel-item-top cursor-pointer"
           onClick={() => setActiveIndex(index)}
         >
           {child}
@@ -31,7 +31,7 @@ export default function VerticalCarousel({
     } else if (index === activeIndex + 1) {
       return (
         <div
-          className="carousel-item carousel-item-bottom"
+          className="carousel-item carousel-item-bottom cursor-pointer"
           onClick={() => setActiveIndex(index)}
         >
           {child}

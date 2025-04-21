@@ -22,10 +22,12 @@
 .carousel-item-top-hidden {
     transform: translateY(calc(-150%)) translateX(calc(100%/2));
     opacity: 0;
+    z-index: -5;
 }  
 
 
 .carousel-item-bottom-hidden {
     transform: translateY(calc(150%)) translateX(calc(100%/2));
     opacity: 0;
+    z-index: -5;
 }  
