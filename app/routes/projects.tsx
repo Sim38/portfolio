@@ -33,7 +33,7 @@ const ProjectSection = () => {
 
 const ProjectContainer = ({ project }: { project: Project }) => {
   return (
-    <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-40 sm:gap-4 ">
+    <div className="flex flex-col p-6 my-8 bg-secondary border-primary-light border-1 gap-6 rounded-xl sm:flex-row sm:p-4 sm:h-50 sm:gap-4 ">
       <ProjectImage imageSrc={project.imageSrc} />
       <div className="flex flex-col gap-2 md:max-w-xl ">
         <h2 className="text-2xl">{project.name}</h2>
