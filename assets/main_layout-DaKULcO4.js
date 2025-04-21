@@ -1,9 +1,10 @@
-import{w as g}from"./with-props-Cp-sCf77.js";import{p,l as e,r as c,O as h}from"./chunk-KNED5TY2-D1bKu3kb.js";import{C as v}from"./caret_overtype-CA4cfF2p.js";const x=[{name:"HOME",link:"/portfolio/"},{name:"PROJECTS",link:"/portfolio/projects"},{name:"ABOUT",link:"/portfolio/about"}];function j({className:r}){const t=p();return e.jsx("nav",{className:`sticky top-0 h-screen flex flex-col justify-center pl-20 ${r}`,children:x.map(n=>e.jsx(N,{tabItem:n,className:"my-8",activePath:t.pathname},n.name))})}const N=({tabItem:r,className:t,activePath:n})=>{const[s,o]=c.useState(!1);return e.jsxs("div",{className:`flex items-center h-[5rem] ${t}`,children:[e.jsx("div",{className:"font-unglitch text-accent-1 text-[5.3rem] tracking-[0.15rem]",children:"~/"}),e.jsxs("a",{href:r.link,className:`group hover:font-glitch hover:text-accent-2 hover:text-[5rem] hover:pb-[0.8rem] ${n===r.link?"font-glitch text-accent-2 text-[5rem] pb-[0.8rem]":"font-unglitch text-accent-1 text-[5.3rem] tracking-[0.15rem]"}`,children:[r.name,e.jsx(v,{className:"ml-1 py-2 group-hover:opacity-100 opacity-0"})]})]})},y=`import CircleIcon from "~/components/cirlce_icon";\r
+import{w as g}from"./with-props-Cp-sCf77.js";import{p as d,l as e,r as c,O as h}from"./chunk-KNED5TY2-D1bKu3kb.js";import{C as v}from"./caret_overtype-CA4cfF2p.js";const u=[{name:"HOME",link:"/portfolio/"},{name:"PROJECTS",link:"/portfolio/projects"},{name:"ABOUT",link:"/portfolio/about"}];function j({className:r}){const t=d();return e.jsx("nav",{className:`sticky top-0 h-screen flex flex-col justify-center pl-20 ${r}`,children:u.map(n=>e.jsx(N,{tabItem:n,className:"my-8",activePath:t.pathname},n.name))})}const N=({tabItem:r,className:t,activePath:n})=>{const[a,o]=c.useState(!1);return e.jsxs("div",{className:`flex items-center h-[5rem] ${t}`,children:[e.jsx("div",{className:"font-unglitch text-accent-1 text-[5.3rem] tracking-[0.15rem]",children:"~/"}),e.jsxs("a",{href:r.link,className:`group hover:font-glitch hover:text-accent-2 hover:text-[5rem] hover:pb-[0.8rem] ${n===r.link?"font-glitch text-accent-2 text-[5rem] pb-[0.8rem]":"font-unglitch text-accent-1 text-[5.3rem] tracking-[0.15rem]"}`,children:[r.name,e.jsx(v,{className:"ml-1 py-2 group-hover:opacity-100 opacity-0"})]})]})},y=`import CircleIcon from "~/components/cirlce_icon";\r
 import SocialContainer from "~/components/social_container";\r
 import LinkedinIcon from "public/assets/LinkedIn_icon.svg";\r
 import TagBlock from "~/components/tag_block";\r
 import { Fragment } from "react/jsx-runtime";\r
 import CaretOvertype from "~/components/caret_overtype";\r
+import ProfilePic from "/assets/profile.jpg";\r
 \r
 const socials = [\r
   {\r
@@ -33,7 +34,7 @@ const UserSection = () => {\r
   return (\r
     <div className="container @container">\r
       <div className="flex flex-col items-center justify-center text-center @md:text-start @md:flex-row @md:gap-8 gap-4">\r
-        <CircleIcon className="h-50 w-50" />\r
+        <CircleIcon className="h-50 w-50" src={ProfilePic} />\r
         <div className="flex flex-col justify-center">\r
           <span className="font-bold text-4xl sm:text-5xl">Sim Jun Hong</span>\r
           <p className="max-w-sm text-accent-2">\r
@@ -77,11 +78,11 @@ const AboutSection = () => {\r
         </div>\r
         <div className="mt-6">\r
           Which has admitedly costed me hundreds if not thousands of hours that\r
-          I'm never gonna get back — not that I would want to anwyays. Cause it\r
+          I'm never gonna get back — not that I would want to anyways. Cause it\r
           is in those "wasted" hours that has allowed to to step out of my\r
           comfort zone and tried so much more new stuff I wouldn't have\r
-          otherwise, and in fact this is how I got into programming in the first\r
-          place. <CaretOvertype className="ml-1" />\r
+          otherwise, and in fact, this is how I got my start in programming in\r
+          the first place. <CaretOvertype className="ml-1" />\r
         </div>\r
       </TagBlock>\r
 \r
@@ -90,6 +91,15 @@ const AboutSection = () => {\r
         <p>Typescript, Javascript, Python, Dart, Kotlin, C, C++, Java, SQL</p>\r
         <p className="underline mt-6">Frameworks</p>\r
         <p>React, Tailwind, Bootstrap, Express, Flutter, Django, Flask</p>\r
+      </TagBlock>\r
+\r
+      <TagBlock tagName="education" className="mt-8">\r
+        <p className="underline">Singapore Polytechnic</p>\r
+        <p>Diploma in Computing Engineering</p>\r
+        <p className="underline mt-6">\r
+          University of Glasgow & Singapore Institute of Technology\r
+        </p>\r
+        <p>2nd Year in Computer Science</p>\r
       </TagBlock>\r
     </div>\r
   );\r
@@ -237,4 +247,4 @@ const TagContainer = ({\r
     </div>\r
   );\r
 };\r
-`,b=[{regex:/^\s*(export|import|const|default|from|function|for|if)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#569cd6]",children:r[0]},t)},{regex:/^\s*(className)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#9cdcf0]",children:r[0]},t)},{regex:/^\s*=\s*/,render:(r,t)=>e.jsx("span",{className:"text-gray-300",children:r[0]},t)},{regex:/^\s*({|}|\[|\])\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#ffd710]",children:r[0]},t)},{regex:/^\s*(\(|\))\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#da70b2]",children:r[0]},t)},{regex:/^\s*(<|>|<\/|\/>)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#808080]",children:r[0]},t)},{regex:/^\s*(".*"|`.*`)/,render:(r,t)=>e.jsx("span",{className:"text-[#ce9078]",children:r[0]},t)},{regex:new RegExp("^\\/*\\w+(?=.*?(?<!=)>)"),render:(r,t)=>e.jsx("span",{className:"text-[#569cd6]",children:r[0]},t)},{regex:/^\s*(\S+)\s*/,render:(r,t)=>e.jsx("span",{className:"text-gray-300",children:r[0]},t)}],m=Object.assign({"../../routes/about.tsx":y,"../../routes/home.tsx":w,"../../routes/projects.tsx":k}),u={};var d;for(const r in m){const t=(d=r.split("/").pop())==null?void 0:d.replace(".tsx","");t&&(u[t]=m[r])}function S(){const t=p().pathname.split("/")[2]||"home",n=u[t]||"",s=c.useMemo(()=>e.jsx(C,{code:n}),[n]);return e.jsx("div",{className:"absolute inset-0 h-screen w-screen overflow-hidden animated-background",children:e.jsxs("div",{className:"code-scroll-wrapper opacity-10",children:[e.jsx("div",{children:Array.from({length:8}).map((o,a)=>e.jsx(c.Fragment,{children:s},a))}),e.jsx("div",{children:Array.from({length:8}).map((o,a)=>e.jsx(c.Fragment,{children:s},a))})]})})}const C=({code:r,className:t})=>{const n=[];let s=r,o=0;for(;s.length>0;){let a=!1;for(const i of b){const l=i.regex.exec(s);if(l){o++;const f=i.render(l,o.toString());n.push(f),s=s.slice(l[0].length),a=!0;break}}if(!a){n.push(e.jsx("span",{className:"text-red-500",children:s})),s="";break}}return e.jsx("span",{children:n})};function _({className:r}){const[t,n]=c.useState(!1);return e.jsxs("nav",{className:`${r}`,children:[e.jsx("div",{className:"flex w-full bg-secondary justify-end px-5 py-2.5",children:e.jsx("button",{className:"text-3xl",onClick:()=>{n(s=>!s)},children:"☰"})}),t?e.jsx(I,{tabItems:x}):null]})}const I=({tabItems:r})=>e.jsx("div",{className:"flex flex-col bg-primary py-2.5",children:r.map(t=>e.jsx("a",{href:t.link,className:"px-5 py-2.5",children:t.name},t.name))}),O=g(function(){return e.jsxs("div",{className:"flex flex-col md:flex-row h-screen",children:[e.jsx(S,{}),e.jsx(j,{className:"hidden md:flex md:flex-1/4"}),e.jsx(_,{className:"md:hidden"}),e.jsx("main",{className:"sm:flex-3/4 sm:p-12 p-8 overflow-y-auto",children:e.jsx(h,{})})]})});export{O as default};
+`,b=[{regex:/^\s*(export|import|const|default|from|function|for|if)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#569cd6]",children:r[0]},t)},{regex:/^\s*(className)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#9cdcf0]",children:r[0]},t)},{regex:/^\s*=\s*/,render:(r,t)=>e.jsx("span",{className:"text-gray-300",children:r[0]},t)},{regex:/^\s*({|}|\[|\])\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#ffd710]",children:r[0]},t)},{regex:/^\s*(\(|\))\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#da70b2]",children:r[0]},t)},{regex:/^\s*(<|>|<\/|\/>)\s*/,render:(r,t)=>e.jsx("span",{className:"text-[#808080]",children:r[0]},t)},{regex:/^\s*(".*"|`.*`)/,render:(r,t)=>e.jsx("span",{className:"text-[#ce9078]",children:r[0]},t)},{regex:new RegExp("^\\/*\\w+(?=.*?(?<!=)>)"),render:(r,t)=>e.jsx("span",{className:"text-[#569cd6]",children:r[0]},t)},{regex:/^\s*(\S+)\s*/,render:(r,t)=>e.jsx("span",{className:"text-gray-300",children:r[0]},t)}],m=Object.assign({"../../routes/about.tsx":y,"../../routes/home.tsx":w,"../../routes/projects.tsx":k}),x={};var p;for(const r in m){const t=(p=r.split("/").pop())==null?void 0:p.replace(".tsx","");t&&(x[t]=m[r])}function S(){const t=d().pathname.split("/")[2]||"home",n=x[t]||"",a=c.useMemo(()=>e.jsx(C,{code:n}),[n]);return e.jsx("div",{className:"absolute inset-0 h-screen w-screen overflow-hidden animated-background",children:e.jsxs("div",{className:"code-scroll-wrapper opacity-10",children:[e.jsx("div",{children:Array.from({length:8}).map((o,s)=>e.jsx(c.Fragment,{children:a},s))}),e.jsx("div",{children:Array.from({length:8}).map((o,s)=>e.jsx(c.Fragment,{children:a},s))})]})})}const C=({code:r,className:t})=>{const n=[];let a=r,o=0;for(;a.length>0;){let s=!1;for(const i of b){const l=i.regex.exec(a);if(l){o++;const f=i.render(l,o.toString());n.push(f),a=a.slice(l[0].length),s=!0;break}}if(!s){n.push(e.jsx("span",{className:"text-red-500",children:a})),a="";break}}return e.jsx("span",{children:n})};function _({className:r}){const[t,n]=c.useState(!1);return e.jsxs("nav",{className:`${r}`,children:[e.jsx("div",{className:"flex w-full bg-secondary justify-end px-5 py-2.5",children:e.jsx("button",{className:"text-3xl",onClick:()=>{n(a=>!a)},children:"☰"})}),t?e.jsx(I,{tabItems:u}):null]})}const I=({tabItems:r})=>e.jsx("div",{className:"flex flex-col bg-primary py-2.5",children:r.map(t=>e.jsx("a",{href:t.link,className:"px-5 py-2.5",children:t.name},t.name))}),O=g(function(){return e.jsxs("div",{className:"flex flex-col md:flex-row h-screen",children:[e.jsx(S,{}),e.jsx(j,{className:"hidden md:flex md:flex-1/4"}),e.jsx(_,{className:"md:hidden"}),e.jsx("main",{className:"sm:flex-3/4 sm:p-12 p-8 overflow-y-auto",children:e.jsx(h,{})})]})});export{O as default};
