@@ -5,7 +5,7 @@ import electronApp from "/assets/projects/image/electron-app.png";
 import myBusz from "/assets/projects/image/mybusz.png";
 import birdFlappy from "/assets/projects/image/birdflappy.png";
 
-import testVideo from "/assets/projects/video/test.mp4";
+import myBuszPreview from "/assets/projects/video/myBuszPreview.mp4";
 
 export const projects: Array<Project> = [
   {
@@ -14,7 +14,6 @@ export const projects: Array<Project> = [
       "Software Application used to manage streamer's twitch account, along with their other stream tools, and stream widgets.",
     tags: ["Electron", "NodeJS", "React"],
     imageSrc: [electron],
-    videoSrc: testVideo,
   },
   {
     name: "Stream Widgets",
@@ -29,6 +28,7 @@ export const projects: Array<Project> = [
       "Mobile Bus Application to check Bus Schedules, Location and Estimated Arrival Time in Malaysia.",
     tags: ["React Native", "Laravel", "SQL"],
     imageSrc: [myBusz],
+    videoSrc: myBuszPreview,
   },
   {
     name: "Bird Flappy",
