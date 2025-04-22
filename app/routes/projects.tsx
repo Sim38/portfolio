@@ -51,7 +51,7 @@ const ProjectVideoPreview = ({
 }) => {
   return (
     <div
-      className={`w-full aspect-video rounded-2xl overflow-hidden ${className}`}
+      className={`ml-1 w-full aspect-video rounded-2xl overflow-hidden shadow-[0_0_0.5rem_rgba(255,255,255,0.5)] ${className}`}
     >
       {videoSrc ? (
         <video
