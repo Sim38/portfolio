@@ -50,7 +50,9 @@ const ProjectVideoPreview = ({
   className?: string;
 }) => {
   return (
-    <div className={`w-full aspect-video ${className}`}>
+    <div
+      className={`w-full aspect-video rounded-2xl overflow-hidden ${className}`}
+    >
       {videoSrc ? (
         <video
           src={videoSrc}
