@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
 import missingImage from "public/assets/missing_image.jpg";
+import noPreview from "public/assets/projects/video/no_preview.gif";
 import VerticalCarousel from "~/components/vertical_carousel";
 import useMediaQuery from "../hooks/useMediaQuery";
 
@@ -15,18 +16,52 @@ export default function Projects() {
 
 const ProjectSection = () => {
   const isLargeScreen = useMediaQuery("(min-width: 1024px)");
+  const [activeIndex, setActiveIndex] = useState(1);
 
   return isLargeScreen ? (
-    <VerticalCarousel>
-      {projects.map((project) => (
-        <ProjectContainer key={project.name} project={project} />
-      ))}
-    </VerticalCarousel>
+    <div className="flex flex-row w-full h-full items-center">
+      <ProjectVideoPreview
+        videoSrc={projects[activeIndex].videoSrc}
+        className="mr-8"
+      />
+      <VerticalCarousel
+        activeIndex={activeIndex}
+        setActiveIndex={setActiveIndex}
+      >
+        {projects.map((project) => (
+          <ProjectContainer key={project.name} project={project} />
+        ))}
+      </VerticalCarousel>
+    </div>
   ) : (
     <div className="w-full sm:w-fit">
       {projects.map((project) => (
         <ProjectContainer key={project.name} project={project} />
       ))}
+    </div>
+  );
+};
+
+const ProjectVideoPreview = ({
+  videoSrc,
+  className,
+}: {
+  videoSrc?: string;
+  className?: string;
+}) => {
+  return (
+    <div className={`w-full aspect-video ${className}`}>
+      {videoSrc ? (
+        <video
+          src={videoSrc}
+          className="w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+        />
+      ) : (
+        <img src={noPreview} className="w-full h-full object-cover" />
+      )}
     </div>
   );
 };

@@ -3,11 +3,22 @@ import React, { useEffect, useState } from "react";
 export default function VerticalCarousel({
   children,
   className,
+  activeIndex: controlledIndex,
+  setActiveIndex: setControlledIndex,
 }: {
   children: React.ReactNode;
   className?: string;
+  activeIndex?: number;
+  setActiveIndex?: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [uncontrolledIndex, setUncontrollerIndex] = useState(1);
+  const isControlled =
+    controlledIndex !== undefined && setControlledIndex !== undefined;
+
+  const activeIndex = isControlled ? controlledIndex : uncontrolledIndex;
+  const setActiveIndex = isControlled
+    ? setControlledIndex
+    : setUncontrollerIndex;
 
   const modifiedChildren = React.Children.map(children, (child, index) => {
     if (index === activeIndex) {

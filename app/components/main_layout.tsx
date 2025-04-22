@@ -7,9 +7,9 @@ export default function MainLayout() {
   return (
     <div className="flex flex-col md:flex-row h-screen">
       <AnimatedBackground />
-      <MainSideBar className="hidden md:flex md:flex-1/4" />
+      <MainSideBar className="hidden md:flex md:flex-1/4 pl-15" />
       <MobiileNavbar className="md:hidden" />
-      <main className="sm:flex-3/4 sm:p-12 p-8 overflow-y-auto">
+      <main className="sm:flex-3/4 sm:px-0 p-8 overflow-y-auto">
         <Outlet />
       </main>
     </div>

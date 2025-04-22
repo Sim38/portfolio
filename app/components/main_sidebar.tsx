@@ -8,7 +8,7 @@ export default function MainSideBar({ className }: { className: string }) {
 
   return (
     <nav
-      className={`sticky top-0 h-screen flex flex-col justify-center pl-20 ${className}`}
+      className={`sticky top-0 h-screen flex flex-col justify-center ${className}`}
     >
       {tabItems.map((tabItem) => (
         <TabComponent

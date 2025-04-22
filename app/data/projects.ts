@@ -1,9 +1,11 @@
-import streamElement from "/assets/projects/stream-element.jpg";
-import subathonTimer from "/assets/projects/subgoal.png";
-import electron from "/assets/projects/electron-icon.svg";
-import electronApp from "/assets/projects/electron-app.png";
-import myBusz from "/assets/projects/mybusz.png";
-import birdFlappy from "/assets/projects/birdflappy.png";
+import streamElement from "/assets/projects/image/stream-element.jpg";
+import subathonTimer from "/assets/projects/image/subgoal.png";
+import electron from "/assets/projects/image/electron-icon.svg";
+import electronApp from "/assets/projects/image/electron-app.png";
+import myBusz from "/assets/projects/image/mybusz.png";
+import birdFlappy from "/assets/projects/image/birdflappy.png";
+
+import testVideo from "/assets/projects/video/test.mp4";
 
 export const projects: Array<Project> = [
   {
@@ -12,6 +14,7 @@ export const projects: Array<Project> = [
       "Software Application used to manage streamer's twitch account, along with their other stream tools, and stream widgets.",
     tags: ["Electron", "NodeJS", "React"],
     imageSrc: [electron],
+    videoSrc: testVideo,
   },
   {
     name: "Stream Widgets",
