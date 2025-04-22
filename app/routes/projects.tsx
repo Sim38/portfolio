@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { projects } from "../data/projects";
-import missingImage from "public/assets/missing_image.jpg";
-import noPreview from "public/assets/projects/video/no_preview.gif";
+import missingImage from "/assets/missing_image.jpg";
+import noPreview from "/assets/projects/video/no_preview.gif";
 import VerticalCarousel from "~/components/vertical_carousel";
 import useMediaQuery from "../hooks/useMediaQuery";
 
