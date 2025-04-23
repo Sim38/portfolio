@@ -19,7 +19,7 @@ export const projects: Array<Project> = [
     name: "Stream Widgets",
     description:
       "Streaming Widgets used by streamers to enhance their streams. Which include Chatbots, Subathon timers, Stream Scheduler and Twitch Extensions.",
-    tags: ["NodeJS", "React"],
+    tags: ["NodeJS", "React", "HTML", "Javascript", "CSS"],
     imageSrc: [streamElement],
   },
   {
